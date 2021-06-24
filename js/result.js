@@ -6,14 +6,23 @@ $(document).ready(function () {
   if (window.localStorage) {
     if (localStorage.userObject) {
       var user_object = localStorage.getItem('userObject');
-      var testVar;
       retreivedObject = JSON.parse(user_object); //parses the retrieved object into an JSON object
       if (JSON.stringify(retreivedObject) == "[]") {
+        // Added jquery methods to show the search results after the loading fades out
+        setTimeout(() => {
+          $(".result").fadeIn();
+          $(".result").addClass("d-flex");
+        }, 2000);
         $('#result-count').text("0 Results");
         $(".result-desc").text(
           "Try starting a new search below"
         );
       } else {
+        // Added jquery methods to show the search results after the loading fades out
+        setTimeout(() => {
+          $(".result").fadeIn();
+          $(".result").addClass("d-flex");
+        }, 2000);
         $('#result-count').text("1 Result");
         $("#result-subtext").html("Look at the result below to see the details of the person you’re searched for.");
         $(".name").append(
@@ -42,4 +51,6 @@ $(document).ready(function () {
       }
     }
   }
+
+
 });

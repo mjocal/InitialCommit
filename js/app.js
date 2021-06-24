@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+  // Added jquery methods to make the effect of the page loading
+  $(".loading").fadeOut(2000);
+  setTimeout(() => {
+    $(".search-again").fadeIn();
+  }, 2000);
+
   $("#btn-search").on("click", function (e) {
     e.preventDefault();
     localStorage.clear(); //Clears storage for next request

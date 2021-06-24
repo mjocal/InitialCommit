@@ -66,6 +66,7 @@ section {
   h1 {
     font-size: 48px;
   }
+
   h2,
   h3,
   h5 {
@@ -77,6 +78,7 @@ section {
   h1 {
     font-size: 32px;
   }
+
   h2 {
     font-size: 16px;
   }
@@ -96,18 +98,32 @@ section {
   padding: 20px 16px;
 }
 
+.logo-img-size {
+  width: 173px;
+  height: 25px;
+}
+
+.img-size {
+  width: 23px;
+  height: 23px;
+}
+
 /* ************************************************************
 ***************************************************************
 --- Search Form ---
 ***************************************************************
 ************************************************************ */
 
+/* I added a background color and a transition to make the hover effect prettier */
+/* The default background color (not image) was white and it looked like it was 'blinking' on hover */
 .btn-form-submit {
   font-size: 24px;
   font-weight: bold;
   color: #004A80;
   background-image: linear-gradient(225deg, #F2DA56 0%, #F6BC25 100%);
   box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
+  background-color: #F6BC25;
+  transition-duration: 0.6s;
   border-radius: 6px;
   outline: 0;
   appearance: none;
@@ -116,15 +132,24 @@ section {
   margin-left: 20px;
 }
 
-.input-group > .form-control {
+.btn-form-submit:hover {
+  background: #F2DA56;
+}
+
+.btn-form-submit:focus,
+.btn-form-submit:active {
+  background: #F6BC25;
+}
+
+.input-group>.form-control {
   height: 70px;
   background: #FFF;
-  box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
+  box-shadow: inset 0 -1px 4px 0 rgba(0, 0, 0, 0.20);
   border-radius: 3px !important;
   font-size: 22px;
 }
 
-.input-group.error > .form-control {
+.input-group.error>.form-control {
   border: 3px solid #DC0015;
   border-radius: 3px 3px 0 0 !important;
 }
@@ -164,15 +189,22 @@ section {
   .input-group {
     flex-direction: column;
   }
-  .input-group > .form-control,
+
+  .input-group>.form-control,
   .btn-form-submit {
     width: 100%;
   }
-  .input-group > .form-control {
+
+  .input-group>.form-control {
     height: 50px;
   }
+
   .btn-form-submit {
     margin: 12px 0 0 0;
+  }
+
+  .input-group.error .error-msg {
+    position: unset;
   }
 }
 
@@ -210,6 +242,11 @@ section {
   line-height: 30px;
 }
 
+.row-direction {
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
 .list-item {
   margin-bottom: 28px;
 }
@@ -237,12 +274,15 @@ section {
   .features .headline {
     margin-bottom: 28px;
   }
+
   .features h2 {
     line-height: 28px;
   }
+
   .list-item {
     margin-bottom: 20px;
   }
+
   .list-circle {
     width: 63px;
     height: 63px;
@@ -250,6 +290,7 @@ section {
     flex: 0 0 63px;
     font-size: 33.6px;
   }
+
   .list-text p {
     line-height: 24px;
   }
@@ -259,9 +300,16 @@ section {
   .features .headline {
     margin-bottom: 20px;
   }
+
+  .row-direction {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
   .list-item {
     margin-bottom: 16px;
   }
+
   .list-circle {
     width: 50.4px;
     height: 50.4px;
@@ -274,6 +322,37 @@ section {
 
 /* ************************************************************
 ***************************************************************
+--- [SECTION][RESULTS PAGE] Loading ---
+***************************************************************
+************************************************************ */
+.loading {
+  background: #F8F8F8;
+  padding: 10em 0
+}
+
+.loading-text {
+  color: #004A80;
+  font-weight: bold;
+  padding: 25px 0;
+}
+
+.loading-img-size {
+  width: 154px;
+}
+
+@media (max-width: 767px) {
+  .loading-text {
+    font-size: 18px;
+  }
+
+  .loading-img-size {
+    width: 124px;
+  }
+}
+
+
+/* ************************************************************
+***************************************************************
 --- [SECTION][RESULTS PAGE] Result ---
 ***************************************************************
 ************************************************************ */
@@ -281,9 +360,10 @@ section {
 .result {
   background: #F8F8F8;
   min-height: 455px;
-  display: flex;
   flex-direction: column;
   justify-content: center;
+
+  display: none;
 }
 
 .result-wrap {
@@ -293,7 +373,7 @@ section {
 .result-card {
   max-width: 980px;
   background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
   border-radius: 30px;
   padding: 40px;
   margin: 40px auto;
@@ -318,12 +398,14 @@ section {
   .result {
     min-height: 512px;
   }
+
   .result-avatar {
     width: 63px;
     height: 63px;
     line-height: 58px;
     flex: 0 0 63px;
   }
+
   .result-avatar img {
     width: 28px;
   }
@@ -333,6 +415,7 @@ section {
   .result {
     min-height: 306px;
   }
+
   .result-avatar {
     display: none;
   }
@@ -346,6 +429,7 @@ section {
 
 .search-again {
   background: #004A80;
+  display: none;
 }
 
 @media (min-width: 992px) {
