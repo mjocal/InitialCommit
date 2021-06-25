@@ -24,62 +24,65 @@ body {
   font-size: 18px;
 }
 
-h1 {
-  font-size: 52px;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: normal;
-}
-
-h3,
-h5 {
-  font-size: 22px;
-}
-
-h4 {
-  font-size: 32px;
-}
-
-h3,
-h4,
-h5 {
-  font-weight: bold;
-  color: #004A80;
-}
 
 section {
   padding: 40px 0 52px;
 }
 
-.text-primary {
-  color: #004A80 !important;
+.primary-heading {
+  font-size: 52px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.primary-heading--blue {
+  color: #004A80;
 }
 
 .text-secondary {
-  color: #4A4A4A !important;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.text-secondary--gray {
+  color: #4A4A4A;
+}
+
+.text-secondary--white {
+  color: #FFFFFF !important;
+}
+
+.small-heading {
+  font-size: 22px;
+}
+
+.medium-heading {
+  font-size: 32px;
+}
+
+.small-heading--blue,
+.medium-heading--blue {
+  font-weight: bold;
+  color: #004A80;
 }
 
 @media (max-width: 991px) {
-  h1 {
+  .primary-heading {
     font-size: 48px;
   }
 
-  h2,
-  h3,
-  h5 {
+  .text-secondary,
+  .small-heading {
     font-size: 20px;
   }
 }
 
 @media (max-width: 767px) {
-  h1 {
+  .primary-heading {
     font-size: 32px;
   }
 
-  h2 {
+  .text-secondary {
     font-size: 16px;
   }
 }
@@ -125,8 +128,7 @@ section {
   margin: 0;
 }
 
-#select-email,
-#select-phone {
+.btn-select {
   font-size: 16px;
   font-weight: bold;
   color: #F6BC25;
@@ -139,19 +141,17 @@ section {
   margin-left: 25px;
 }
 
-#select-email:focus,
-#select-email:active,
-#select-email:hover,
-#select-phone:focus,
-#select-phone:active,
-#select-phone:hover {
+.btn-select:focus,
+.btn-select:active,
+.btn-select:hover {
   background-color: #F6BC25;
   color: #004A80;
   position: relative;
+  outline: 0;
 }
 
-#select-email::after,
-#select-phone::after {
+.btn-select:focus::after,
+.btn-select:active::after {
   content: '';
   position: absolute;
   top: 100%;
@@ -268,8 +268,7 @@ section {
     display: none;
   }
 
-  #select-email,
-  #select-phone {
+  .btn-select {
     font-size: 14px;
     width: 140px;
     margin: 0;
@@ -317,6 +316,8 @@ section {
 
 .list-item {
   margin-bottom: 28px;
+  display: flex;
+  align-items: center;
 }
 
 .list-circle {
@@ -376,6 +377,7 @@ section {
 
   .list-item {
     margin-bottom: 16px;
+    align-items: flex-start;
   }
 
   .list-circle {
