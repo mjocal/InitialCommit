@@ -113,6 +113,55 @@ section {
 --- Search Form ---
 ***************************************************************
 ************************************************************ */
+.form-selection {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-type-text {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}
+
+#select-email,
+#select-phone {
+  font-size: 16px;
+  font-weight: bold;
+  color: #F6BC25;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 3px solid #F6BC25;
+  outline: 0;
+  height: 40px;
+  width: 150px;
+  margin-left: 25px;
+}
+
+#select-email:focus,
+#select-email:active,
+#select-email:hover,
+#select-phone:focus,
+#select-phone:active,
+#select-phone:hover {
+  background-color: #F6BC25;
+  color: #004A80;
+  position: relative;
+}
+
+#select-email::after,
+#select-phone::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 5px);
+  background: #F6BC25;
+  width: 15px;
+  height: 8px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
 
 /* I added a background color and a transition to make the hover effect prettier */
 /* The default background color (not image) was white and it looked like it was 'blinking' on hover */
@@ -139,6 +188,10 @@ section {
 .btn-form-submit:focus,
 .btn-form-submit:active {
   background: #F6BC25;
+}
+
+.phone-group {
+  display: flex;
 }
 
 .input-group>.form-control {
@@ -205,6 +258,21 @@ section {
 
   .input-group.error .error-msg {
     position: unset;
+  }
+
+  .form-selection {
+    justify-content: space-between;
+  }
+
+  .search-type-text {
+    display: none;
+  }
+
+  #select-email,
+  #select-phone {
+    font-size: 14px;
+    width: 140px;
+    margin: 0;
   }
 }
 
