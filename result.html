@@ -38,7 +38,7 @@
     <div class="container">
       <div class="headline text-center">
         <h1 id="result-count" class="primary-heading primary-heading--blue mb-3"></h1>
-        <h2 id="result-subtext" class="result-desc"></h2>
+        <h2 id="result-subtext" class="result-desc text-secondary"></h2>
       </div>
       <div class="result-wrap">
         <div class="result-card d-flex">
@@ -78,13 +78,29 @@
     <div class="container">
       <div class="headline text-white text-center">
         <h1 class="primary-heading mb-3">Can't Find The Right Person?</h1>
-        <h2 class="mb-4 mb-md-5"><strong>Try Again</strong> - Make a new search</h2>
+        <h2 class="text-secondary text-secondary--white mb-4 mb-md-5"><strong>Try Again</strong> - Make a new search
+        </h2>
       </div>
       <form>
-        <div class="input-group">
+        <!-- <div class="input-group">
           <input class="form-control" type="text" name="email" placeholder="Enter an Email Address" />
           <p class="error-msg">Please enter a valid email address</p>
           <button id="btn-search" class="btn btn-form-submit text-uppercase" type="submit">Go!</button>
+        </div> -->
+        <div class="form-selection">
+          <p class="search-type-text">TYPE OF SEARCH:</p>
+          <button id="select-email" class="btn-select">EMAIL ADDRESS</button>
+          <button id="select-phone" class="btn-select">PHONE NUMBER</button>
+        </div>
+        <div class="input-group email-group">
+          <input class="form-control" type="text" name="email" placeholder="Enter an Email Address" />
+          <p class="error-msg">Please enter a valid email address</p>
+          <button id="btn-search-email" class="btn btn-form-submit" type="submit">GO!</button>
+        </div>
+        <div class="input-group phone-group">
+          <input class="form-control" type="text" name="phone" placeholder="Enter a Phone Number" />
+          <p class="error-msg">Please enter a valid phone number</p>
+          <button id="btn-search-phone" class="btn btn-form-submit" type="submit">GO!</button>
         </div>
       </form>
     </div>

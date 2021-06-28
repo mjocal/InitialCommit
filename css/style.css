@@ -44,6 +44,11 @@ section {
   font-weight: normal;
 }
 
+.text-tertiary {
+  font-size: 22px;
+  font-weight: normal;
+}
+
 .text-secondary--gray {
   color: #4A4A4A;
 }
@@ -79,11 +84,11 @@ section {
 
 @media (max-width: 767px) {
   .primary-heading {
-    font-size: 32px;
+    font-size: 38px;
   }
 
   .text-secondary {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -464,6 +469,13 @@ section {
   color: #4A4A4A;
 }
 
+.address,
+.email>p,
+.phone-num>a,
+.relatives>p {
+  font-size: 18px;
+}
+
 @media (max-width: 991px) {
   .result {
     min-height: 512px;
@@ -478,6 +490,13 @@ section {
 
   .result-avatar img {
     width: 28px;
+  }
+
+  .address,
+  .email>p,
+  .phone-num>a,
+  .relatives>p {
+    font-size: 16px;
   }
 }
 
